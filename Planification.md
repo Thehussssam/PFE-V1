@@ -4,7 +4,7 @@
 
 # 🧭 1. Méthodologie adoptée
 
-Le développement du projet **JobConnect – Plateforme de Recrutement Web** sera réalisé selon une approche organisée basée sur plusieurs phases :
+Le développement du projet JobConnect sera réalisé selon une approche progressive basée sur plusieurs étapes :
 
 - Analyse  
 - Conception  
@@ -12,158 +12,144 @@ Le développement du projet **JobConnect – Plateforme de Recrutement Web** ser
 - Tests  
 - Finalisation  
 
-Cette méthode permet d’assurer une progression claire et une meilleure organisation du travail durant toute la période du projet.
+Cette organisation permet de suivre l’avancement du projet de manière claire et structurée.
 
 ---
 
 # 📆 2. Découpage du projet
 
-## 🟦 Phase 1 : Analyse et Conception
+## 🟦 Phase 1 : Analyse & Préparation du Projet
 
-📅 **Du 12/05/2026 au 18/05/2026**
+📅 **Du 02/05/2026 au 10/05/2026**
 
-Cette première étape est consacrée à la préparation du projet et à l’étude des besoins.
+Cette première étape est consacrée à la réflexion et à la préparation du projet.
 
 ### 🔹 Tâches réalisées
 
-- Analyse du sujet et définition des objectifs  
-- Rédaction du cahier des charges JobConnect  
-- Définition des fonctionnalités principales  
-- Conception de la base de données :
+- Recherche de l’idée du projet  
+- Analyse des besoins  
+- Définition des objectifs  
+- Rédaction du cahier des charges  
+- Réalisation de la planification du projet  
+
+### 🎯 Résultat attendu
+
+- Sujet du projet validé  
+- Cahier des charges prêt  
+- Planning du projet défini  
+
+---
+
+## 🟨 Phase 2 : Maquettes UI/UX & Design
+
+📅 **Du 10/05/2026 au 15/05/2026**
+
+Cette phase concerne la conception visuelle de la plateforme.
+
+### 🔹 Tâches réalisées
+
+- Création des maquettes UI/UX sur Figma  
+- Création du logo JobConnect  
+- Définition des couleurs et de la typographie  
+- Réalisation du design des pages principales  
+
+### 🎯 Résultat attendu
+
+- Interfaces modernes prêtes  
+- Identité visuelle complète du projet  
+
+---
+
+## 🟩 Phase 3 : Conception de la Base de Données
+
+📅 **Du 15/05/2026 au 19/05/2026**
+
+Cette étape est dédiée à la conception technique de la base de données.
+
+### 🔹 Tâches réalisées
+
+- Réalisation du MCD  
+- Réalisation du MLD  
+- Définition des relations entre les tables  
+- Préparation de la structure MySQL :
   - users  
   - companies  
   - jobs  
   - applications  
-- Réalisation des maquettes UI/UX (Figma)  
-- Définition de la charte graphique :
-  - logo  
-  - couleurs  
-  - typographie  
 
 ### 🎯 Résultat attendu
 
-- Cahier des charges finalisé  
-- Maquettes des interfaces prêtes  
-- Structure de la base de données conçue  
+- Base de données conçue et structurée  
 
 ---
 
-## 🟨 Phase 2 : Développement Front-end
+## 🟧 Phase 4 : Développement Front-end
 
-📅 **Du 19/05/2026 au 25/05/2026**
+📅 **Du 19/05/2026 au 28/05/2026**
 
 Cette phase concerne le développement des interfaces utilisateur.
 
 ### 🔹 Tâches réalisées
 
-- Création des pages principales :
+- Intégration HTML/CSS
+- Ajout d’interactivité avec JavaScript  
+- Création des pages :
   - Home  
   - Jobs  
   - Companies  
-  - Job Details  
   - Login / Register  
-- Intégration du design avec HTML/CSS  
-- Utilisation de Bootstrap  
-- Ajout d’interactivité avec JavaScript  
-- Création d’un design responsive :
+  - Dashboards  
+- Responsive design :
   - Mobile  
-  - Tablette  
   - Desktop  
 
 ### 🎯 Résultat attendu
 
-Interface utilisateur moderne, responsive et fonctionnelle.
+- Front-end moderne et responsive  
 
 ---
 
-## 🟩 Phase 3 : Développement Back-end
+## 🟥 Phase 5 : Développement Back-end
 
-📅 **Du 26/05/2026 au 01/06/2026**
+📅 **Du 28/05/2026 au 08/06/2026**
 
-Cette étape est dédiée à la logique du système et à la connexion avec la base de données.
+Cette étape concerne la logique du système et la connexion avec la base de données.
 
 ### 🔹 Tâches réalisées
 
 - Création de la base de données MySQL  
 - Connexion PHP avec PDO  
-- Développement du système d’authentification :
-  - Login  
-  - Register  
-- Gestion des offres d’emploi (CRUD)  
+- Développement du système d’authentification  
+- Gestion des utilisateurs  
+- Gestion des offres d’emploi  
 - Gestion des candidatures  
-- Gestion des utilisateurs  
-- Mise en place des sessions utilisateurs  
+- Gestion des sessions utilisateurs  
+- Développement des dashboards  
 
 ### 🎯 Résultat attendu
 
-Plateforme dynamique connectée à la base de données.
+- Plateforme dynamique et fonctionnelle  
 
 ---
 
-## 🟧 Phase 4 : Dashboard & Administration
+## 🟪 Phase 6 : Tests, Présentation & Soutenance
 
-📅 **Du 02/06/2026 au 05/06/2026**
+📅 **Du 08/06/2026 au 16/06/2026**
 
-Cette phase concerne les espaces d’administration et de gestion.
-
-### 🔹 Tâches réalisées
-
-- Création du dashboard candidat  
-- Création du dashboard recruteur  
-- Gestion des offres publiées  
-- Gestion des candidatures reçues  
-- Gestion des utilisateurs  
-- Affichage des statistiques :
-  - nombre d’offres  
-  - nombre de candidatures  
-  - utilisateurs inscrits  
-
-### 🎯 Résultat attendu
-
-Dashboards fonctionnels avec statistiques et gestion complète.
-
----
-
-## 🟥 Phase 5 : Tests et Correction
-
-📅 **Du 06/06/2026 au 09/06/2026**
-
-Cette phase permet de tester l’application et corriger les erreurs.
+Dernière étape avant la finalisation du projet.
 
 ### 🔹 Tâches réalisées
 
-- Test des fonctionnalités principales  
+- Test des fonctionnalités  
 - Correction des bugs  
-- Vérification des formulaires  
-- Tests de sécurité :
-  - sessions  
-  - injections SQL  
-- Optimisation des performances  
-
-### 🎯 Résultat attendu
-
-Application stable, sécurisée et fonctionnelle.
-
----
-
-## 🟪 Phase 6 : Finalisation et Livraison
-
-📅 **Du 10/06/2026 au 12/06/2026**
-
-Dernière étape avant la soutenance finale.
-
-### 🔹 Tâches réalisées
-
-- Amélioration finale du design UI  
-- Nettoyage et organisation du code  
-- Vérification complète du projet  
+- Optimisation du design et du code  
 - Préparation du rapport final  
-- Création du support de présentation (PowerPoint)  
-- Préparation à la soutenance orale  
+- Création du PowerPoint de présentation  
+- Préparation de la soutenance orale  
 
 ### 🎯 Résultat attendu
 
-Projet final prêt pour la présentation et la soutenance.
+- Projet final prêt pour la soutenance  
 
 ---
 
@@ -171,23 +157,23 @@ Projet final prêt pour la présentation et la soutenance.
 
 | Phase | Date début | Date fin | Durée |
 |---|---|---|---|
-| Analyse & Conception | 12/05/2026 | 18/05/2026 | 1 semaine |
-| Développement Front-end | 19/05/2026 | 25/05/2026 | 1 semaine |
-| Développement Back-end | 26/05/2026 | 01/06/2026 | 1 semaine |
-| Dashboard & Administration | 02/06/2026 | 05/06/2026 | 3 à 4 jours |
-| Tests & Correction | 06/06/2026 | 09/06/2026 | 3 à 4 jours |
-| Finalisation & Livraison | 10/06/2026 | 12/06/2026 | 2 à 3 jours |
+| Analyse & Préparation | 02/05/2026 | 10/05/2026 | 1 semaine |
+| Maquettes & Design | 10/05/2026 | 15/05/2026 | 5 jours |
+| Conception Base de Données | 15/05/2026 | 19/05/2026 | 4 jours |
+| Développement Front-end | 19/05/2026 | 28/05/2026 | 1 semaine |
+| Développement Back-end | 28/05/2026 | 08/06/2026 | 1 semaine et demie |
+| Tests & Soutenance | 06/06/2026 | 16/06/2026 | 1 semaine |
 
 ---
 
 # ⏳ Durée totale
 
-👉 Du 12 Mai 2026 au 12 Juin 2026 (environ 1 mois)
+👉 Du 02 Mai 2026 au 16 Juin 2026 (environ 1 mois et demi)
 
 ---
 
 # 📌 4. Conclusion
 
-La planification du projet **JobConnect – Plateforme de Recrutement Web** permet une organisation claire et progressive du travail.
+La planification du projet JobConnect permet une bonne organisation du travail durant toutes les étapes du développement.
 
-Elle garantit un développement structuré du projet, depuis l’analyse des besoins jusqu’à la livraison finale d’une plateforme moderne, responsive et fonctionnelle prête pour la soutenance.
+Elle facilite le suivi de l’avancement du projet et garantit la réalisation d’une plateforme moderne, responsive et fonctionnelle prête pour la soutenance finale.
