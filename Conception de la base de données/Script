@@ -1,0 +1,49 @@
+CREATE DATABASE jobconnect;
+USE jobconnect;
+
+CREATE TABLE entreprise (
+  id_entreprise  INT          NOT NULL AUTO_INCREMENT,
+  nom_entreprise VARCHAR(100) NOT NULL,
+  description    TEXT,
+  email          VARCHAR(100) NOT NULL UNIQUE,
+  password       VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id_entreprise)
+);
+
+CREATE TABLE utilisateur (
+  id_user   INT          NOT NULL AUTO_INCREMENT,
+  nom       VARCHAR(100) NOT NULL,
+  email     VARCHAR(100) NOT NULL UNIQUE,
+  password  VARCHAR(255) NOT NULL,
+  telephone VARCHAR(20),
+  bio       TEXT,
+  PRIMARY KEY (id_user)
+);
+
+CREATE TABLE jobs (
+  id_job        INT          NOT NULL AUTO_INCREMENT,
+  id_entreprise INT          NOT NULL,
+  titre         VARCHAR(150) NOT NULL,
+  description   TEXT         NOT NULL,
+  location      VARCHAR(100),
+  type_contrat  VARCHAR(50),
+  statut        ENUM('ouvert', 'fermé') NOT NULL DEFAULT 'ouvert',
+  PRIMARY KEY (id_job),
+  CONSTRAINT fk_jobs_entreprise FOREIGN KEY (id_entreprise) REFERENCES entreprise(id_entreprise)
+    ON UPDATE CASCADE ON DELETE RESTRICT
+);
+
+CREATE TABLE candidature (
+  id_candidature   INT          NOT NULL AUTO_INCREMENT,
+  id_user          INT          NOT NULL,
+  id_job           INT          NOT NULL,
+  cv               VARCHAR(255) NOT NULL,
+  lettre_motivation TEXT,
+  statut           ENUM('en_attente', 'accepté', 'refusé') NOT NULL DEFAULT 'en_attente',
+  date_postulation DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id_candidature),
+  CONSTRAINT fk_cand_user FOREIGN KEY (id_user) REFERENCES utilisateur(id_user)
+    ON UPDATE CASCADE ON DELETE RESTRICT,
+  CONSTRAINT fk_cand_job FOREIGN KEY (id_job) REFERENCES jobs(id_job)
+    ON UPDATE CASCADE ON DELETE RESTRICT
+);
