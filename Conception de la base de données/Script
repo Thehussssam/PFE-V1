@@ -9,7 +9,8 @@ CREATE TABLE entreprise (
     nom_entreprise VARCHAR(100) NOT NULL,
     description TEXT,
     email VARCHAR(100) NOT NULL UNIQUE,
-    mot_de_passe VARCHAR(255) NOT NULL
+    mot_de_passe VARCHAR(255) NOT NULL,
+    date_creation DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
 -- =====================================
@@ -21,7 +22,8 @@ CREATE TABLE utilisateur (
     email VARCHAR(100) NOT NULL UNIQUE,
     mot_de_passe VARCHAR(255) NOT NULL,
     telephone VARCHAR(20),
-    bio TEXT
+    bio TEXT,
+    date_creation DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
 -- =====================================
@@ -32,6 +34,7 @@ CREATE TABLE jobs (
     id_entreprise INT NOT NULL,
     titre VARCHAR(150) NOT NULL,
     description TEXT NOT NULL,
+    categorie VARCHAR(100) NOT NULL,
     location VARCHAR(100),
     type_contrat ENUM('CDI', 'CDD', 'Stage', 'Freelance') NOT NULL,
     statut ENUM('ouverte', 'fermee') NOT NULL DEFAULT 'ouverte',
@@ -50,7 +53,6 @@ CREATE TABLE candidature (
     id_candidature INT AUTO_INCREMENT PRIMARY KEY,
     id_user INT NOT NULL,
     id_job INT NOT NULL,
-    cv VARCHAR(255) NOT NULL,
     lettre_motivation TEXT,
     statut ENUM('en_attente', 'acceptee', 'refusee') NOT NULL DEFAULT 'en_attente',
     date_postulation DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
