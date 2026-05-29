@@ -19,6 +19,7 @@ CREATE TABLE entreprise (
 CREATE TABLE utilisateur (
     id_user INT AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(100) NOT NULL,
+    prenom VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     mot_de_passe VARCHAR(255) NOT NULL,
     telephone VARCHAR(20),
@@ -36,6 +37,7 @@ CREATE TABLE jobs (
     description TEXT NOT NULL,
     categorie VARCHAR(100) NOT NULL,
     location VARCHAR(100),
+    date_publication DATETIME DEFAULT CURRENT_TIMESTAMP,
     type_contrat ENUM('CDI', 'CDD', 'Stage', 'Freelance') NOT NULL,
     statut ENUM('ouverte', 'fermee') NOT NULL DEFAULT 'ouverte',
 
