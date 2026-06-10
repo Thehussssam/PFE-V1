@@ -1,4 +1,5 @@
 <?php
+// session helpers
 require_once __DIR__ . '/../includes/session.php';
 ?>
 
@@ -6,18 +7,22 @@ require_once __DIR__ . '/../includes/session.php';
 
     <div>
 
+        <!-- logo -->
         <div class="sidebar-logo">
 
             <a href="/index.php" class="navbar-logo">
 
-            <img src="/assets/images/logo.png" alt="JobConnect Logo" class="logo-img" width="32" height="32">
+                <img src="/assets/images/logo.png" alt="JobConnect Logo" class="logo-img" width="32" height="32">
 
-            <span class="logo-text"> Job<span class="logo-accent">Connect</span></span>
+                <span class="logo-text">
+                    Job<span class="logo-accent">Connect</span>
+                </span>
 
-        </a>
+            </a>
 
         </div>
 
+        <!-- menu -->
         <nav class="sidebar-menu">
 
             <?php if (isCompany()): ?>
@@ -32,24 +37,24 @@ require_once __DIR__ . '/../includes/session.php';
                     Settings
                 </a>
 
-                <?php elseif (isAdmin()): ?>
+            <?php elseif (isAdmin()): ?>
 
-                    <a href="/admin/dashboard.php">
-                        <i class="fa-solid fa-gauge"></i>
-                        Dashboard
-                    </a>
+                <a href="/admin/dashboard.php">
+                    <i class="fa-solid fa-gauge"></i>
+                    Dashboard
+                </a>
 
-                <?php else: ?>
+            <?php else: ?>
 
-                    <a href="/utilisateur/dashboard.php">
-                        <i class="fa-solid fa-gauge"></i>
-                        Dashboard
-                    </a>
+                <a href="/utilisateur/dashboard.php">
+                    <i class="fa-solid fa-gauge"></i>
+                    Dashboard
+                </a>
 
-                    <a href="/utilisateur/profile.php">
-                        <i class="fa-solid fa-gear"></i>
-                        Settings
-                    </a>
+                <a href="/utilisateur/profile.php">
+                    <i class="fa-solid fa-gear"></i>
+                    Settings
+                </a>
 
             <?php endif; ?>
 
@@ -57,10 +62,15 @@ require_once __DIR__ . '/../includes/session.php';
 
     </div>
 
+    <!-- user info -->
     <div class="sidebar-user">
 
         <div>
-            <h4><?php echo htmlspecialchars($_SESSION['user_name'] ?? 'Guest'); ?></h4>
+
+            <h4>
+                <?= htmlspecialchars($_SESSION['user_name'] ?? 'Guest'); ?>
+            </h4>
+
             <span>
                 <?php
                     if (isAdmin()) {
@@ -70,11 +80,13 @@ require_once __DIR__ . '/../includes/session.php';
                     } else {
                         echo 'Candidate';
                     }
-              ?>
+                ?>
             </span>
-            
+
         </div>
-<a href="/logout.php" class="btn-logout">Logout</a>
+
+        <a href="/logout.php" class="btn-logout">Logout</a>
+
     </div>
 
 </aside>
