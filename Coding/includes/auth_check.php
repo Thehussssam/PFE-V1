@@ -1,20 +1,19 @@
 <?php
 
+// session helpers
 require_once __DIR__ . '/session.php';
 
-/* =====================
-   CHECK LOGIN ONLY
-===================== */
+//check login
 function requireLogin() {
+
     if (!isLoggedIn()) {
         header('Location: /login.php');
         exit;
     }
+
 }
 
-/* =====================
-   CHECK ROLE
-===================== */
+//check role
 function requireRole($role) {
 
     requireLogin();
@@ -23,7 +22,7 @@ function requireRole($role) {
 
     if ($currentRole !== $role) {
 
-        // Redirect based on actual role
+        // redirect by role
         switch ($currentRole) {
 
             case 'admin':
@@ -38,7 +37,6 @@ function requireRole($role) {
                 header('Location: /index.php');
                 break;
         }
-
         exit;
     }
 }

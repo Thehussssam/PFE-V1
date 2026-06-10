@@ -1,19 +1,16 @@
 <?php
 
+// start session if not started
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-/* =====================
-   CHECK LOGIN
-===================== */
+//login check
 function isLoggedIn() {
     return isset($_SESSION['user_id']) && isset($_SESSION['user_email']);
 }
 
-/* =====================
-   GET ROLE
-===================== */
+//get user role
 function getUserRole() {
 
     if (!isset($_SESSION['user_email'])) {
@@ -33,9 +30,7 @@ function getUserRole() {
     return 'candidate';
 }
 
-/* =====================
-   ROLE HELPERS
-===================== */
+//role helpers
 function isAdmin() {
     return getUserRole() === 'admin';
 }
@@ -48,9 +43,7 @@ function isCandidate() {
     return getUserRole() === 'candidate';
 }
 
-/* =====================
-   GET EMAIL
-===================== */
+//get email
 function getUserEmail() {
     return $_SESSION['user_email'] ?? '';
 }

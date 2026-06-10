@@ -1,32 +1,33 @@
 <?php
-
+// session helpers
 require_once __DIR__ . '/session.php';
-
 ?>
 
 <nav class="navbar">
 
     <div class="nav-container">
 
-        <!-- LOGO -->
+        <!-- logo -->
         <a href="/index.php" class="navbar-logo">
 
             <img src="/assets/images/logo.png" alt="JobConnect Logo" class="logo-img" width="32" height="32">
 
-            <span class="logo-text"> Job<span class="logo-accent">Connect</span></span>
+            <span class="logo-text">
+                Job<span class="logo-accent">Connect</span>
+            </span>
 
         </a>
 
-        <!-- LINKS -->
+        <!-- links -->
         <div class="nav-links">
 
-            <!-- PUBLIC LINKS (everyone sees them) -->
+            <!-- public links -->
             <a href="/utilisateur/jobs.php">Find Jobs</a>
             <a href="/utilisateur/categories.php">Categories</a>
-        
+
         </div>
 
-        <!-- AUTH SECTION -->
+        <!-- auth -->
         <div class="nav-auth">
 
             <?php if (isLoggedIn()): ?>
