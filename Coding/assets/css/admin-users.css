@@ -1,0 +1,209 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #f9fafb;
+    color: #1f2937;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Wrapper sans sidebar */
+.dashboard-layout:has(.all-users-page) {
+    display: block;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.all-users-page {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 48px 24px 64px;
+}
+
+/* Header */
+.all-users-page .dashboard-header {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.all-users-page .dashboard-header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #091e42;
+}
+
+.all-users-page .dashboard-header p {
+    margin: 8px 0 0;
+    font-size: 15px;
+    color: #6b7280;
+}
+
+/* Main block */
+.all-users-page .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 32px;
+}
+
+.all-users-page section.jobs-section {
+    width: 100%;
+}
+
+/* Section title row */
+.all-users-page .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0;
+    padding: 0 4px 14px;
+}
+
+.all-users-page .section-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.all-users-page .section-header a {
+    color: #4f46e5;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.all-users-page .section-header a:hover {
+    color: #4338ca;
+    text-decoration: underline;
+}
+
+/* Card */
+.all-users-page .card {
+    background: #ffffff;
+    padding: 0;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+    overflow: hidden;
+}
+
+.all-users-page .card:hover {
+    transform: none;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+
+/* User list */
+.all-users-page table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.all-users-page table thead {
+    display: none;
+}
+
+.all-users-page tbody tr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 22px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.all-users-page tbody tr:last-child {
+    border-bottom: none;
+}
+
+.all-users-page td {
+    padding: 0;
+    border: none;
+    font-size: 14px;
+}
+
+.all-users-page td strong {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.all-users-page td:last-child {
+    flex-shrink: 0;
+}
+
+/* Badges */
+.all-users-page .status {
+    display: inline-block;
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.all-users-page .status.accepted {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.all-users-page .status.pending {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.all-users-page .empty-users-msg {
+    text-align: center;
+    color: #6b7280;
+    padding: 24px 16px;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .all-users-page {
+        padding: 32px 16px 48px;
+    }
+
+    .all-users-page .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+
+.btn-delete-user {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #ef4444;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-delete-user:hover {
+    background-color: #dc2626;
+}
+
+.btn-delete-user:active {
+    transform: scale(0.97);
+}
+
+table th, table td {
+    padding: 12px 16px;
+    text-align: left;
+    vertical-align: middle;
+}

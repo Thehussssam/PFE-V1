@@ -1,0 +1,408 @@
+
+:root {
+    --primary-blue: #0f62fe;
+    --primary-blue-hover: #0353e9;
+    --primary-blue-light: #e5efff;
+    --text-navy: #091e42;
+    --text-slate: #5e6c84;
+    --border-gray: #dfe1e6;
+    --bg-light: #f4f5f7;
+    --bg-white: #ffffff;
+    --shadow-soft: 0 4px 20px rgba(9, 30, 66, 0.05);
+    --shadow-medium: 0 12px 30px rgba(9, 30, 66, 0.08);
+    --transition-fast: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.companies-page-wrapper {
+    background-color: #f7f9fc;
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+.companies-hero {
+    background: linear-gradient(180deg, #edf3ff 0%, #f7f9fc 100%);
+    padding: 60px 0 50px 0;
+    text-align: center;
+}
+
+.companies-hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.companies-hero h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--text-navy);
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.companies-hero h1 .highlight-blue {
+    color: var(--primary-blue);
+}
+
+.companies-hero .hero-subtitle {
+    font-size: 15px;
+    color: var(--text-slate);
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Search Bar Card */
+.companies-search-card {
+    background-color: var(--bg-white);
+    border-radius: 100px;
+    padding: 8px 8px 8px 24px;
+    box-shadow: 0 10px 30px rgba(9, 30, 66, 0.06);
+    border: 1px solid var(--border-gray);
+    margin-bottom: 24px;
+    transition: var(--transition-fast);
+}
+
+.companies-search-card:focus-within {
+    border-color: var(--primary-blue);
+    box-shadow: 0 12px 35px rgba(15, 98, 254, 0.1);
+}
+
+.companies-search-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.companies-search-field {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+.companies-search-field svg {
+    color: #5e6c84;
+    opacity: 0.7;
+    flex-shrink: 0;
+}
+
+.companies-search-field input {
+    width: 100%;
+    color: var(--text-navy);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 0;
+}
+
+.companies-search-field input::placeholder {
+    color: #a5b0c0;
+}
+
+.companies-field-divider {
+    width: 1px;
+    height: 28px;
+    background-color: var(--border-gray);
+    margin: 0 20px;
+    flex-shrink: 0;
+}
+
+.btn-companies-search {
+    background-color: var(--primary-blue);
+    color: var(--bg-white);
+    padding: 12px 36px;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.btn-companies-search:hover {
+    background-color: var(--primary-blue-hover);
+    box-shadow: 0 4px 12px rgba(15, 98, 254, 0.2);
+}
+
+/* Filter pills */
+.companies-filter-pills {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.filter-pill-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-gray);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-slate);
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.filter-pill-dropdown:hover {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+    background-color: var(--primary-blue-light);
+}
+
+.filter-pill-dropdown svg {
+    opacity: 0.7;
+}
+
+/* Featured Workplaces Section */
+.featured-workplaces-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section-header {
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-navy);
+    margin-bottom: 4px;
+}
+
+.section-header p {
+    font-size: 14px;
+    color: var(--text-slate);
+}
+
+/* Grid Layout */
+.companies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.company-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-gray);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(9, 30, 66, 0.02);
+    transition: var(--transition-fast);
+}
+
+.company-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-medium);
+    border-color: rgba(15, 98, 254, 0.15);
+}
+
+.card-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.company-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* Custom logo backgrounds */
+.logo-bg-blue { background-color: #e5efff; color: var(--primary-blue); }
+.logo-bg-purple { background-color: #f3ebff; color: #8a3ffc; }
+.logo-bg-indigo { background-color: #eef0ff; color: #5856d6; }
+.logo-bg-teal { background-color: #e3fcf7; color: #00876a; }
+.logo-bg-orange { background-color: #ffebe6; color: #ff5630; }
+.logo-bg-sky { background-color: #e6f7ff; color: #0098d9; }
+
+.badge-green {
+    background-color: #e3fcf7;
+    color: #00876a;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.badge-blue {
+    background-color: #e5efff;
+    color: #0f62fe;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.badge-purple {
+    background-color: #f3ebff;
+    color: #8a3ffc;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.badge-orange {
+    background-color: #ffebe6;
+    color: #ff5630;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.company-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-navy);
+    margin-bottom: 8px;
+}
+
+.company-desc {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: var(--text-slate);
+    margin-bottom: 16px;
+    flex-grow: 1;
+}
+
+.company-meta-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: var(--text-slate);
+    font-weight: 500;
+}
+
+.company-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.company-meta-item svg {
+    opacity: 0.6;
+}
+
+.card-divider {
+    height: 1px;
+    background-color: #f4f5f7;
+    margin-bottom: 16px;
+    border: none;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.open-positions-count {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.btn-view-company {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-view-company:hover {
+    color: var(--primary-blue-hover);
+    text-decoration: underline;
+}
+
+/* Pagination */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.pagination-item {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-slate);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    border: 1px solid transparent;
+}
+
+.pagination-item:hover:not(.dots):not(.active) {
+    background-color: #edf3ff;
+    color: var(--primary-blue);
+}
+
+.pagination-item.active {
+    background-color: var(--primary-blue);
+    color: #fff;
+}
+
+.pagination-item.dots {
+    cursor: default;
+}
+
+@media (max-width: 992px) {
+    .companies-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .companies-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .companies-search-card {
+        padding: 12px 16px;
+        border-radius: 20px;
+    }
+    
+    .companies-search-form {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .companies-field-divider {
+        display: none;
+    }
+    
+    .btn-companies-search {
+        width: 100%;
+    }
+}

@@ -1,0 +1,807 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ==========================================================================
+   JobConnect Main stylesheet
+   Aesthetics: Clean, Premium, High Contrast Slate & Vibrant Blue Palette
+   ========================================================================== */
+
+/* 1. Global Reset & Variables */
+:root {
+    --primary-blue: #0f62fe;
+    --primary-blue-hover: #0353e9;
+    --primary-blue-light: #e5efff;
+    --accent-green: #00876a;
+    --accent-green-light: #e3fcf7;
+    --text-navy: #091e42;
+    --text-slate: #5e6c84;
+    --border-gray: #dfe1e6;
+    --bg-light: #f4f5f7;
+    --bg-white: #ffffff;
+    --shadow-soft: 0 4px 20px rgba(9, 30, 66, 0.05);
+    --shadow-medium: 0 12px 30px rgba(9, 30, 66, 0.08);
+    --shadow-large: 0 20px 40px rgba(15, 98, 254, 0.12);
+    --transition-fast: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--text-slate);
+    background-color: var(--bg-white);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-fast);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+input, button {
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+/* Container */
+.nav-container,
+.hero-container,
+.stats-container,
+.featured-container,
+.cta-container,
+.footer-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ==========================================================================
+   2. Navigation bar (Navbar)
+   ========================================================================== */
+.navbar {
+    height: 80px;
+    border-bottom: 1px solid var(--border-gray);
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.navbar-logo,
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-navy);
+}
+
+.logo-icon,
+.logo-img {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+}
+
+.logo-text span,
+.logo-accent {
+    color: var(--primary-blue);
+}
+
+/* Nav Links — simple, no hover effects */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-links a,
+.nav-link {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-slate);
+    padding: 8px 0;
+}
+
+.nav-links a:hover,
+.nav-link:hover {
+    color: var(--text-slate);
+}
+
+.nav-link.active {
+    color: var(--text-slate);
+    font-weight: 600;
+}
+
+/* Auth Buttons */
+.nav-auth {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-login {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.btn-login:hover {
+    color: var(--primary-blue);
+}
+
+.nav-auth .btn {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.btn-register,
+.btn-post {
+    background-color: var(--primary-blue);
+    color: var(--bg-white);
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(15, 98, 254, 0.2);
+}
+
+.btn-register:hover,
+.btn-post:hover {
+    background-color: var(--primary-blue-hover);
+}
+
+.btn-logout {
+    font-size: 15px;
+    font-weight: 600;
+    color: #dc2626;
+    text-decoration: none;
+}
+
+.btn-logout:hover {
+    color: #b91c1c;
+}
+
+/* ==========================================================================
+   3. Hero Section
+   ========================================================================== */
+.hero-section {
+    padding: 80px 0 100px 0;
+    background-color: var(--bg-white);
+    overflow: hidden;
+}
+
+.hero-container {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.hero-text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 54px;
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--text-navy);
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+}
+
+.hero-title .highlight-blue {
+    color: var(--primary-blue);
+}
+
+.hero-subtitle {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-slate);
+    margin-bottom: 0;
+    max-width: 520px;
+}
+
+/* Search Bar Card */
+.search-card {
+    background-color: var(--bg-white);
+    border-radius: 16px;
+    padding: 12px;
+    box-shadow: var(--shadow-medium);
+    border: 1px solid var(--border-gray);
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search-field {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    flex-grow: 1;
+}
+
+.field-icon {
+    color: var(--text-slate);
+    flex-shrink: 0;
+}
+
+.search-field input {
+    width: 100%;
+    color: var(--text-navy);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.search-field input::placeholder {
+    color: #a5b0c0;
+}
+
+.field-divider {
+    width: 1px;
+    height: 36px;
+    background-color: var(--border-gray);
+    flex-shrink: 0;
+}
+
+.btn-search {
+    background-color: var(--primary-blue);
+    color: var(--bg-white);
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.btn-search:hover {
+    background-color: var(--primary-blue-hover);
+    box-shadow: 0 4px 12px rgba(15, 98, 254, 0.2);
+}
+
+/* Hero Visual */
+.hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* Soft gradients behind the image */
+.hero-visual::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 110%;
+    height: 110%;
+    background: radial-gradient(circle, rgba(15, 98, 254, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    z-index: 2;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow-large);
+    border: 1px solid rgba(15, 98, 254, 0.1);
+}
+
+.hero-img {
+    object-fit: cover;
+    width: 100%;
+    height: 480px;
+}
+
+/* ==========================================================================
+   4. Stats Bar Section
+   ========================================================================== */
+.stats-bar {
+    background-color: var(--primary-blue);
+    padding: 40px 0;
+    color: var(--bg-white);
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-family: 'Outfit', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* ==========================================================================
+   5. Featured Opportunities Section
+   ========================================================================== */
+.featured-section {
+    padding: 90px 0;
+    background-color: var(--bg-white);
+}
+
+.featured-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 48px;
+}
+
+.section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-navy);
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    font-size: 15px;
+    color: var(--text-slate);
+}
+
+.view-all-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.view-all-link svg {
+    transition: transform 0.2s ease;
+}
+
+.view-all-link:hover {
+    color: var(--primary-blue-hover);
+}
+
+.view-all-link:hover svg {
+    transform: translateX(4px);
+}
+
+/* Job Cards Grid */
+.job-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.job-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-gray);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 300px;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-fast);
+}
+
+.job-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-medium);
+    border-color: rgba(15, 98, 254, 0.2);
+}
+
+.job-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+/* Logo Placeholders with curated soft colors */
+.company-logo-placeholder {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.logo-blue {
+    background-color: var(--primary-blue-light);
+    color: var(--primary-blue);
+}
+
+.logo-purple {
+    background-color: #f3ebff;
+    color: #8a3ffc;
+}
+
+.logo-orange {
+    background-color: #ffebe6;
+    color: #ff5630;
+}
+
+/* Green new badge */
+.tag-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.badge-green {
+    background-color: var(--accent-green-light);
+    color: var(--accent-green);
+}
+
+/* Card Body */
+.job-title-card {
+    font-family: 'Outfit', sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--text-navy);
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.company-location {
+    font-size: 14px;
+    color: var(--text-slate);
+    margin-bottom: 18px;
+}
+
+.tags-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+}
+
+.pill-tag {
+    background-color: var(--bg-light);
+    color: var(--text-slate);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Card Footer */
+.job-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 18px;
+    border-top: 1px solid var(--bg-light);
+}
+
+.job-salary {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-navy);
+}
+
+.btn-apply-now {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.btn-apply-now:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   6. Call to Action (CTA) Section
+   ========================================================================== */
+.cta-section {
+    padding: 50px 0 90px 0;
+    background-color: var(--bg-white);
+}
+
+.cta-card {
+    background: linear-gradient(135deg, #0d285c 0%, #071736 100%);
+    border-radius: 24px;
+    padding: 60px 48px;
+    text-align: center;
+    box-shadow: var(--shadow-large);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle graphic effect inside CTA card */
+.cta-card::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    right: -150px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(15, 98, 254, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+}
+
+.cta-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--bg-white);
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.cta-description {
+    font-size: 16px;
+    color: #c1c7d0;
+    max-width: 600px;
+    margin: 0 auto 36px auto;
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    position: relative;
+    z-index: 10;
+}
+
+.btn-cta-primary {
+    background-color: var(--primary-blue);
+    color: var(--bg-white);
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(15, 98, 254, 0.3);
+}
+
+.btn-cta-primary:hover {
+    background-color: var(--primary-blue-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(15, 98, 254, 0.4);
+}
+
+.btn-cta-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--bg-white);
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.btn-cta-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--bg-white);
+}
+
+/* ==========================================================================
+   7. Footer Section
+   ========================================================================== */
+.footer {
+    border-top: 1px solid var(--border-gray);
+    padding: 40px 0;
+    background-color: var(--bg-white);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.footer-logo {
+    font-size: 18px;
+    gap: 8px;
+}
+
+.copyright {
+    font-size: 14px;
+    color: var(--text-slate);
+}
+
+.footer-links {
+    display: flex;
+    gap: 28px;
+}
+
+.footer-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-slate);
+}
+
+.footer-links a:hover {
+    color: var(--primary-blue);
+}
+
+.footer-socials {
+    display: flex;
+    gap: 16px;
+}
+
+.social-icon {
+    color: var(--text-slate);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: var(--bg-light);
+}
+
+.social-icon:hover {
+    color: var(--primary-blue);
+    background-color: var(--primary-blue-light);
+}
+
+/* ==========================================================================
+   8. Responsive Design (Media Queries)
+   ========================================================================== */
+@media (max-width: 992px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .hero-text-content {
+        align-items: center;
+    }
+    
+    .hero-subtitle {
+        margin: 0 auto 40px auto;
+    }
+    
+    .hero-visual {
+        justify-content: center;
+    }
+    
+    .hero-img {
+        height: 380px;
+    }
+    
+    .job-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        height: auto;
+        padding: 16px 0;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .nav-links {
+        gap: 20px;
+    }
+    
+    .search-form {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .field-divider {
+        display: none;
+    }
+    
+    .search-field {
+        width: 100%;
+        border: 1px solid var(--border-gray);
+        border-radius: 8px;
+    }
+    
+    .btn-search {
+        width: 100%;
+    }
+    
+    .stats-container {
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+    .featured-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    
+    .job-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-card {
+        padding: 40px 24px;
+    }
+    
+    .cta-title {
+        font-size: 28px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+    }
+    
+    .footer-brand {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .footer-links {
+        justify-content: center;
+    }
+}
